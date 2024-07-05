@@ -1,0 +1,21 @@
+/* BackToTopButton.css */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: gold;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    transition: .5s;
+  }
+  
+  .back-to-top-btn:hover {
+    background-color: transparent;
+    transform: translateY(-10px);
+  }
+  

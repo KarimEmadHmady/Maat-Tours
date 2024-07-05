@@ -16,6 +16,7 @@
     font-size: 16px;
     color: #eee;
     position: relative;
+    cursor: pointer;
   }
   
   .navbar .A-header::before {
