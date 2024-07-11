@@ -1,19 +1,86 @@
-
-import Navbar from './component/navbar/Navbar';
-import MainSection from './component/navbar/MainSection/MainSection';
-import { Spotlight } from './component/ui/Spotlight';
+import Navbar from "./component/navbar/Navbar";
+import MainSection from "./component/navbar/MainSection/MainSection";
+import { Spotlight } from "./component/ui/Spotlight";
 import { FlipWords } from "./component/ui/flip-words";
-import Card from './component/card-server/Card';
-import { imagepira2, imagepira3, imagepira4, imagepira5, imagepira6, imagepira7, imagepira8 } from './assets/Image';
-import FuriosaPoster from './component/card-3d/3d';
-import Contact from './component/Contact/Contact';
-import Footer from './component/footer/Footer';
-import BackToTopButton from './component/BackToTopButton/BackToTopButton';
+import Card from "./component/card-server/Card";
+import {
+  imagepira2,
+  imagepira3,
+  imagepira4,
+  imagepira5,
+  imagepira6,
+  imagepira7,
+  imagepira8,
+} from "./assets/Image";
+import FuriosaPoster from "./component/card-3d/3d";
+import Contact from "./component/Contact/Contact";
+import Footer from "./component/footer/Footer";
+import BackToTopButton from "./component/BackToTopButton/BackToTopButton";
+import Coupon from "./component/StarRating/Coupon";
+import React, { useState, useEffect } from "react";
 
+import styled from "styled-components";
+import ReviewForm from "./component/SendReview/SendReview";
+
+const reviews = [
+  { stars: 5, comment: "Great service!", businessName: "Name of Client" },
+  { stars: 4, comment: "Very good experience.", businessName: "Name of Client" },
+  { stars: 3, comment: "It was okay.", businessName: "Name of Client" },
+  { stars: 5, comment: "Nice Place.", businessName: "Name of Client" },
+  { stars: 4, comment: "Awesome Trip.", businessName: "Name of Client" },
+  { stars: 3, comment: "alot of Adventure", businessName: "Name of Client" },
+];
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px 0;
+`;
+
+const Arrow = styled.div`
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 0 20px;
+  color: #fff;
+`;
 
 function App() {
-  const words = ["Adventure", "Journey", "Exploration", "Discovery", "Culture", "Ancient Wonders"];
+  const words = [
+    "Adventure",
+    "Journey",
+    "Exploration",
+    "Discovery",
+    "Culture",
+    "Ancient Wonders",
+  ];
   const wordss = ["Our Server", "Our Advantages"];
+  const wordsss = ["Our Client Review", "Share Your Opinion"];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -28,13 +95,15 @@ function App() {
         <MainSection />
       </div>
       <div id="about">
-      <FlipWords words={words} />
+        <FlipWords words={words} />
       </div>
       <Spotlight className="custom-class">
         <div className="content-secand">
-          <p>Embark on unforgettable journeys through the heart of Egypt. Discover ancient wonders,
-            vibrant cultures, and breathtaking landscapes.
-            Let Maat Tours turn your dream trip into a reality</p>
+          <p>
+            Embark on unforgettable journeys through the heart of Egypt.
+            Discover ancient wonders, vibrant cultures, and breathtaking
+            landscapes. Let Maat Tours turn your dream trip into a reality
+          </p>
         </div>
       </Spotlight>
       <br />
@@ -80,7 +149,7 @@ function App() {
           />
         </div>
       </div>
-      <div >
+      <div>
         <FuriosaPoster />
       </div>
       <br />
@@ -88,8 +157,30 @@ function App() {
       <div id="contact">
         <Contact />
       </div>
+
+      <div id="Review" >
+      <FlipWords words={wordsss} />
+      </div>
+      <br />
+      <br />
+      <br />
+
+      
+      <Container>
+        <Arrow onClick={handlePrev}>&lt;</Arrow>
+        <Coupon
+          stars={reviews[currentIndex].stars}
+          comment={reviews[currentIndex].comment}
+          businessName={reviews[currentIndex].businessName}
+        />
+        <Arrow onClick={handleNext}>&gt;</Arrow>
+      </Container>
+      
+
+      <ReviewForm />
+
       <Footer />
-      <BackToTopButton/>
+      <BackToTopButton />
     </>
   );
 }

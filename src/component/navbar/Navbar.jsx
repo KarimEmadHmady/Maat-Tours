@@ -75,6 +75,16 @@ const Navbar = () => {
           Services
         </Link>
         <Link
+          to="Review"
+          smooth={true}
+          duration={500}
+          className="A-header"
+          onClick={toggleMenu}
+        >
+          Review
+        </Link>
+        
+        <Link
           to="contact"
           smooth={true}
           duration={500}

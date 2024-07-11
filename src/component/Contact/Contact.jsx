@@ -26,7 +26,9 @@ const Contact = () => {
             Swal.fire({
                 title: "Success!",
                 text: "Message Sent Successfully!",
-                icon: "success"
+                icon: "success",
+                iconColor: "gold",
+                confirmButtonColor: "gold",
               });
               event.target.reset();
         }

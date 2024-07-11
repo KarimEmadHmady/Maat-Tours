@@ -8,11 +8,16 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  
+
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #999; 
+  color: gold; 
 }
 
 ::-webkit-scrollbar {
@@ -140,3 +145,4 @@ body {
   color: white !important;
   height: 0px;
 }
+
