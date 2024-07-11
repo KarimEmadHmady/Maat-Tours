@@ -1,6 +1,6 @@
+import fallbackImage from '../../../assets/359.jpg'; // Path to your fallback image
 import React, { useState } from 'react';
 import video from '../../../assets/vid.mp4'; // Adjust the path according to your project structure
-import fallbackImage from '../../../assets/359.jfif'; // Path to your fallback image
 import './MainSection.css';
 
 const MainSection = () => {
