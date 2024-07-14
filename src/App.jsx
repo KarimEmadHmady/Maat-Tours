@@ -77,7 +77,7 @@ function App() {
       setCurrentIndex((prevIndex) =>
         prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
