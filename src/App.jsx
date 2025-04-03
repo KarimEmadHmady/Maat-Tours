@@ -23,12 +23,36 @@ import styled from "styled-components";
 import ReviewForm from "./component/SendReview/SendReview";
 
 const reviews = [
-  { stars: 5, comment: "Choosing Ma'at Travel was the best decision for our family vacation. They have great team who's took care of every detail, allowing us to relax and enjoy every moment of our trip in Egypt I recommend it ."},
-  { stars: 4, comment: "Booking with Ma'at Travel was seamless from start to finish. Their knowledgeable guides in Cairo and Luxor were make our tour perfect and their team helped us plan the perfect itinerary, and everything went off without a hitch", },
-  { stars: 5, comment: "We travelled to Egypt for 10 days and visited Luxor and Cairo. Before the trip Mostafa was super helpful and responded to all our questions really quickly. We booked 2 day tours in both Cairo and Luxor and airport transfers with MA'AT TOURS. Everything went really well. In Luxor and in Cairo The guides were both very knowledgable and we enjoyed touring with them. I would definitely recommend booking tours with MA'AT TOURS. as we had an amazing and worryfree vacation!" },
-  { stars: 5, comment: "Ma'at Travel exceeded my expectations! Their attention to detail and personalized service made my vacation unforgettable. I highly recommend them!"},
-  { stars: 4, comment: "It was a fantastic trip, or rather a stop in Cairo on my way to Rome. Fantastic in its speed, organization, execution, saturation, informativeness and impressions. Many thanks to the entire team of ma'at tours for the warm welcome at the plane ramp and the escort to the private car with a guide and driver. Special thanks to the wonderful guide sohila , my exceptional guide, who accompanied me everywhere and told me as much as possible about the history of Egypt from ancient civilization to the present day, especially in the Cairo Museum!" },
-  { stars: 4, comment: "Everything was amazing! If you don't remember the history of the Ancient World very well, but want to embrace the immensity in a few hours, then in Egypt you should come to ma'at tours with sohila"/* , businessName: "Name of Client" */ },
+  {
+    stars: 5,
+    comment:
+      "Choosing Ma'at Travel was the best decision for our family vacation. They have great team who's took care of every detail, allowing us to relax and enjoy every moment of our trip in Egypt I recommend it .",
+  },
+  {
+    stars: 4,
+    comment:
+      "Booking with Ma'at Travel was seamless from start to finish. Their knowledgeable guides in Cairo and Luxor were make our tour perfect and their team helped us plan the perfect itinerary, and everything went off without a hitch",
+  },
+  {
+    stars: 5,
+    comment:
+      "We travelled to Egypt for 10 days and visited Luxor and Cairo. Before the trip Mostafa was super helpful and responded to all our questions really quickly. We booked 2 day tours in both Cairo and Luxor and airport transfers with MA'AT TOURS. Everything went really well. In Luxor and in Cairo The guides were both very knowledgable and we enjoyed touring with them. I would definitely recommend booking tours with MA'AT TOURS. as we had an amazing and worryfree vacation!",
+  },
+  {
+    stars: 5,
+    comment:
+      "Ma'at Travel exceeded my expectations! Their attention to detail and personalized service made my vacation unforgettable. I highly recommend them!",
+  },
+  {
+    stars: 4,
+    comment:
+      "It was a fantastic trip, or rather a stop in Cairo on my way to Rome. Fantastic in its speed, organization, execution, saturation, informativeness and impressions. Many thanks to the entire team of ma'at tours for the warm welcome at the plane ramp and the escort to the private car with a guide and driver. Special thanks to the wonderful guide sohila , my exceptional guide, who accompanied me everywhere and told me as much as possible about the history of Egypt from ancient civilization to the present day, especially in the Cairo Museum!",
+  },
+  {
+    stars: 4,
+    comment:
+      "Everything was amazing! If you don't remember the history of the Ancient World very well, but want to embrace the immensity in a few hours, then in Egypt you should come to ma'at tours with sohila" /* , businessName: "Name of Client" */,
+  },
 ];
 
 const Container = styled.div`
@@ -158,14 +182,13 @@ function App() {
         <Contact />
       </div>
 
-      <div id="Review" >
-      <FlipWords words={wordsss} />
+      <div id="Review">
+        <FlipWords words={wordsss} />
       </div>
       <br />
       <br />
       <br />
 
-      
       <Container>
         <Arrow onClick={handlePrev}>&lt;</Arrow>
         <Coupon
@@ -175,7 +198,6 @@ function App() {
         />
         <Arrow onClick={handleNext}>&gt;</Arrow>
       </Container>
-      
 
       <ReviewForm />
 

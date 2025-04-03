@@ -8,7 +8,6 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-
 }
 
 html {
@@ -16,22 +15,21 @@ html {
 }
 
 ::selection {
-  background-color: #999; 
-  color: gold; 
+  background-color: #999;
+  color: gold;
 }
 
 ::-webkit-scrollbar {
-  width: 12px; 
+  width: 12px;
 }
 
-
 ::-webkit-scrollbar-track {
-  background: #171717; 
+  background: #171717;
 }
 
 ::-webkit-scrollbar-thumb {
   background: gold;
-  border-radius: 2px; 
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -124,28 +122,26 @@ body {
   color: #ffffff;
   margin: -800px 13px 0 13px;
   font-size: 35px;
- 
 }
 
-@media (max-width:767px) {
-  .content-secand{
+@media (max-width: 767px) {
+  .content-secand {
     margin: -190px 13px 0 13px;
     font-size: 16px;
   }
-  .center-container{
+  .center-container {
     font-size: 14px;
   }
 }
-@media (min-width:768px) and (max-width:1150px) {
-  .content-secand{
+@media (min-width: 768px) and (max-width: 1150px) {
+  .content-secand {
     margin: -450px 13px 0 13px;
     font-size: 30px;
   }
 }
 
 .center-container {
-  text-align: center !important; 
+  text-align: center !important;
   color: white !important;
   height: 0px;
 }
-

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Swal from "sweetalert2";
 
 const FormContainer = styled.div`
   max-width: 400px;
@@ -41,7 +41,7 @@ const Star = styled.span`
   font-size: 35px;
   margin-left: 3px;
   cursor: pointer;
-  color: ${props => (props.filled ? '#FFD700' : '#ccc')};
+  color: ${(props) => (props.filled ? "#FFD700" : "#ccc")};
 `;
 
 const CommentInput = styled.textarea`
@@ -79,7 +79,7 @@ const StarDisplay = styled.div`
 
 const ReviewForm = () => {
   const [stars, setStars] = useState(0);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
 
   const handleStarClick = (starCount) => {
     setStars(starCount);
@@ -89,28 +89,23 @@ const ReviewForm = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    // Append stars value to the form data
-    formData.append('stars', stars);
+    formData.append("stars", stars);
 
-    // Append access key
     formData.append("access_key", "069348b3-ea90-46ff-aba1-dad6760f67d2");
 
-    // Convert form data to JSON string
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    // Submit the form data
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
-      body: json
+      body: json,
     }).then((res) => res.json());
-    console.log(res)
+    console.log(res);
 
-    // Show success message and reset form on successful submission
     if (res.success) {
       Swal.fire({
         title: "Success!",
@@ -139,9 +134,12 @@ const ReviewForm = () => {
             </Star>
           ))}
         </StarRating>
-        <StarDisplay>{stars === 0 ? "Please select a rating" : `You rated: ${stars} stars`}</StarDisplay>
+        <StarDisplay>
+          {stars === 0 ? "Please select a rating" : `You rated: ${stars} stars`}
+        </StarDisplay>
         <Label>Write your comment:</Label>
-        <CommentInput name='comment'
+        <CommentInput
+          name="comment"
           value={comment}
           onChange={(event) => setComment(event.target.value)}
           placeholder="Write your comment here..."

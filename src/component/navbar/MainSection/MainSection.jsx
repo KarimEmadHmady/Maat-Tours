@@ -1,7 +1,7 @@
-import fallbackImage from '../../../assets/359.jpg'; // Path to your fallback image
-import React, { useState } from 'react';
-import video from '../../../assets/vid.mp4'; // Adjust the path according to your project structure
-import './MainSection.css';
+import fallbackImage from "../../../assets/359.jpg";
+import React, { useState } from "react";
+import video from "../../../assets/vid.mp4";
+import "./MainSection.css";
 
 const MainSection = () => {
   const [videoError, setVideoError] = useState(false);
@@ -14,7 +14,11 @@ const MainSection = () => {
     <>
       <div className="container">
         {videoError ? (
-          <img src={fallbackImage} alt="Fallback Image" className="video-background" />
+          <img
+            src={fallbackImage}
+            alt="Fallback Image"
+            className="video-background"
+          />
         ) : (
           <video
             src={video}
@@ -30,7 +34,6 @@ const MainSection = () => {
           <h3>A sun rising behind the pyramid</h3>
           <br />
           <p>symbolizing a new adventure. </p>
-         
         </div>
       </div>
     </>

@@ -1,7 +1,5 @@
 
-import './Card.css'; // Assuming you have a CSS file for styles
-
-// eslint-disable-next-line react/prop-types
+import './Card.css'; 
 const Card = ({ imageUrl, title, description }) => {
   return (
     <div className="card">

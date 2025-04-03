@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
+import React from "react";
+import styled from "styled-components";
+import { useSpring, animated } from "react-spring";
 
 const CouponContainer = styled(animated.div)`
   width: 350px;
@@ -14,14 +14,12 @@ const CouponContainer = styled(animated.div)`
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-gap: 15px 0;
+  gap: 15px 0;
   @media (max-width: 768px) {
     width: 100%;
     margin: 0;
-
   }
 `;
-
 
 const Stars = styled.div`
   display: flex;
@@ -29,7 +27,7 @@ const Stars = styled.div`
 `;
 
 const Star = styled.span`
-  color: #FFD700;
+  color: #ffd700;
   margin-right: 5px;
 `;
 
@@ -46,8 +44,8 @@ const BusinessName = styled.h3`
 
 const Coupon = ({ stars, comment, businessName }) => {
   const animationProps = useSpring({
-    from: { opacity: 0, transform: 'translateY(20px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
+    from: { opacity: 0, transform: "translateY(20px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
     config: { tension: 120, friction: 14 },
   });
 
